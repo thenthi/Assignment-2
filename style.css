@@ -1,8 +1,6 @@
 :root {
-  --primary-bg-color: #f4f4f4;
   --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
+  --main-text-color: #565656;
   --main-btn-bg-color: #938989;
 }
 
@@ -13,18 +11,25 @@ ul {
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  animation: colorChange 100s infinite alternate;
 }
+/* This one i created an animtion automatic change bg color, because i want to make the background looks more interesting and attractive,
+I search for which color is help people giảm mỏi mắt và feel relax when they looking at and I decide combine all of this put in the background*/
+ @keyframes colorChange{
 
+  0%{ background-color:#9CAF88;}
+  25%{ background-color: #87CEEB;}
+  50%{ background-color: #E3E4FA;}
+  75%{ background-color:#F5F5DC;}
+  100%{ background-color:#FFD7BE;}
+ }
 /* Add additional styles as needed */
 
 /* Create a container for the main content */
@@ -35,35 +40,60 @@ body {
 }
 
 /* Header styling */
-header {
-  background-color: var(--main-bg-color);
+/*header {
   color: var(--main-text-color);
   padding: 10px 0;
   text-align: center;
   width: 100%;
+  position: sticky;
+  top: 12px;
 }
 
 /* Navigation styling */
-nav {
-  margin-top: 20px;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding: 15px 530px ;
+  background: rgba(189, 187, 187, 0);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-nav ul li {
-  margin-right: 20px;
-}
-
-nav a {
+.navbar a {
   text-decoration: none;
-  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6e6e6e;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 4px 8px;
 }
 
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #000000;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
 /* Media player styling */
 .media-player {
   width: 100%;
