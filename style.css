@@ -40,7 +40,7 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
 }
 
 /* Header styling */
-/*header {
+header {
   color: var(--main-text-color);
   padding: 10px 0;
   text-align: center;
@@ -116,7 +116,6 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   border-radius: 50px;
   padding: 12px 12px;
   cursor: pointer;
-  font-size: 16px;
   display: flex;
   align-items: center;
   backdrop-filter: blur(12px);
@@ -132,20 +131,64 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
 
 .progress-bar {
   border-radius: 50px;
-  border: 1px solid rgba(83, 83, 83, 0.295);
-  width: 100%;
+  border: 1px solid rgb(104, 104, 104);
+  width: 80%;
   height: 10px;
-  background-color: #909090;
+  background-color: #9f9e9e;
   margin-top: 10px;
   overflow: hidden;
 }
 
 .progress-bar span {
   display: block;
-  height: 100%;
+  height: 80px;
   width: 0;
   transition: width 0.3s ease;
   animation: colorChange 100s infinite alternate;
+}
+
+.volume-controls {
+  justify-content: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 50px;
+  width: 80%;
+  border-radius: 100px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(83, 83, 83, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.251))
+}
+
+#volume-slider {
+  position: absolute;
+  bottom: 40px; 
+  right: -5px;
+  height: 70px;
+  width: 4px;
+  -webkit-appearance: slider-vertical;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.volume-controls:hover #volume-slider {
+  width: 120px;
+  opacity: 1;
+}
+
+.volume-controls button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0))
+}
+
+.volume-controls button:hover {
+  transform: scale(1.05);
 }
 
 /* Footer styling */

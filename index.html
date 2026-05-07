@@ -12,7 +12,7 @@
   <body>
     <!-- Header Section -->
     <header>
-      <!--<h1><b>Focus Flow</b></h1>-->
+      <h1><b>Focus Flow</b></h1>
           
     </header>
   <nav class = "navbar">
@@ -30,8 +30,49 @@
             type="audio/mp3"
           />
         </audio>
-        <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
+          <!-- add the missing buttons or functionality here -->
+              <div class="volume-controls" 
+              style ="flex-direction: row-reverse" >
+              <input id="volume-slider" type="range" min="0" max="100" value="0" step="1">
+          <button id="on-off-sound" onclick="toggleOnOff()">
+              <img
+              id="on-off-img"
+              src="https://img.icons8.com/?size=100&id=641&format=png&color=000000"
+              alt="On Sound Button"
+              width="24"
+              height="24"
+              />
+          </button>
+
+          <button id="loop-sound" onclick="toggleLoop()">
+              <img
+              id="loop-img"
+              src="https://img.icons8.com/?size=100&id=412&format=png&color=000000"
+              alt="Loop Button"
+              width="24"
+              height="24"
+              />
+          </button>
+
+          <div class="progress-bar">
+            <span id="progress-bar-fill"></span>
+          </div>
+          </div>
+
+           <div class="custom-controls"
+           style="justify-content: center;">
+            <button id="fast" onclick="toggleFast()">
+            <img
+              id="fast-img"
+              src="https://img.icons8.com/?size=100&id=406&format=png&color=000000"
+              alt="Fast Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button id="play-pause-btn" onclick="togglePlayPause()"
+          lass="custom-controls"
+           style="justify-content: center;">
             <img
               id="play-pause-img"
               src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
@@ -40,16 +81,20 @@
               height="24"
             />
           </button>
-          <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
-            <span id="progress-bar-fill"></span>
-          </div>
-        </div>
+            <button id="fast" onclick="toggleSlow()">
+            <img
+              id="slow-img"
+              src="https://img.icons8.com/?size=100&id=404&format=png&color=000000"
+              alt="Slow Button"
+              width="24"
+              height="24"
+            />
+          </button>
       </div>
 
       <!-- Additional Content Section -->
       <section>
-        <h2>Additional Content</h2>
+        <h2>Relax</h2>
         <p>This is where you can showcase any other relevant content.</p>
         <!-- Add more content as needed -->
       </section>
