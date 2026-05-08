@@ -10,53 +10,42 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+
     <!-- Header Section -->
-    <header>
-      <h1><b>Focus Flow</b></h1>
-          
-    </header>
-  <nav class = "navbar">
+    <header class="site-header">
+      <a class="logo" href="#">Focus Flow</a>
+      <nav class="navbar" aria-label="Main navigation">
         <a href="#Relax">Relax</a>
         <a href="#Sleeping">Sleeping</a>
         <a href="#Studying">Studying</a>
-    </nav>
+      </nav>
+    </header>
+
     <!-- Main Content Section -->
-    <main class="container">
-      <!-- Media Player Section -->
-      <div class="media-player">
+    <main>
+      <section class="container">
+       <div class="main-content">
+          <p class="left-side">Ambient audio player</p>
+          <h1>Relax Music</h1>
+          <p class="intro">
+            Choose a calm sound, keep the controls close, and settle into a
+            cleaner listening space.
+          </p>
+    <!-- Media Player Section -->
+       <div class="media-player">
+         <div class="track-info">
+              <span>Now playing</span>
+            </div>
         <audio id="custom-audio-player" controls>
           <source
             src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
             type="audio/mp3"
           />
         </audio>
+
           <!-- add the missing buttons or functionality here -->
-              <div class="volume-controls" 
-              style ="flex-direction: row-reverse" >
-              <input id="volume-slider" type="range" min="0" max="100" value="0" step="1">
-          <button id="on-off-sound" onclick="toggleOnOff()">
-              <img
-              id="on-off-img"
-              src="https://img.icons8.com/?size=100&id=641&format=png&color=000000"
-              alt="On Sound Button"
-              width="24"
-              height="24"
-              />
-          </button>
-
-          <button id="loop-sound" onclick="toggleLoop()">
-              <img
-              id="loop-img"
-              src="https://img.icons8.com/?size=100&id=412&format=png&color=000000"
-              alt="Loop Button"
-              width="24"
-              height="24"
-              />
-          </button>
-
           <div class="progress-bar">
             <span id="progress-bar-fill"></span>
-          </div>
           </div>
 
            <div class="custom-controls"
@@ -70,8 +59,8 @@
               height="24"
             />
           </button>
+
           <button id="play-pause-btn" onclick="togglePlayPause()"
-          lass="custom-controls"
            style="justify-content: center;">
             <img
               id="play-pause-img"
@@ -81,7 +70,8 @@
               height="24"
             />
           </button>
-            <button id="fast" onclick="toggleSlow()">
+
+            <button id="slow" onclick="toggleSlow()">
             <img
               id="slow-img"
               src="https://img.icons8.com/?size=100&id=404&format=png&color=000000"
@@ -92,11 +82,151 @@
           </button>
       </div>
 
+       <div class="volume-controls"  >
+
+          <button id="loop-sound" onclick="toggleLoop()">
+              <img
+              id="loop-img"
+              src="https://img.icons8.com/?size=100&id=412&format=png&color=000000"
+              alt="Loop Button"
+              width="24"
+              height="24"
+              />
+          </button>
+
+          <button id="on-off-sound" onclick="toggleOnOff()">
+              <img
+              id="on-off-img"
+              src="https://img.icons8.com/?size=100&id=641&format=png&color=000000"
+              alt="On Sound Button"
+              width="24"
+              height="24"
+              />
+          </button>
+          <input id="volume-slider" type="range" min="0" max="100" value="100" step="1">
+          </div>
+          </div> 
+       </div>
+
+          <div class="main-image">
+
+
+          <audio id="rainy-audio" loop>
+          <source 
+          src="rainy.mp3"
+          type="audio/mp3"
+          />
+          </audio>
+          <button id="rainy-sound" onclick="toggleRainy()">
+          <img
+            src="https://img.icons8.com/?size=100&id=656&format=png&color=000000"
+            alt="Rainy"
+          />
+          </button>
+
+
+          <audio id ="thunderstorm-audio" loop>
+            <source 
+            src="thunderstorm.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="thunderstorm-sound" onclick="toggleThunderstorm()">
+          <img 
+          src="https://img.icons8.com/?size=100&id=41144&format=png&color=000000"
+          alt="Thunderstorm"
+          />
+          </button>
+
+
+          <audio id ="ocean-audio" loop>
+            <source 
+            src="ocean.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="ocean-sound" onclick="toggleOcean()">
+          <img
+          src="https://img.icons8.com/?size=100&id=3023&format=png&color=000000"
+          alt="Ocenwave"
+          />
+          </button>
+
+
+          <audio id ="forest-audio" loop>
+            <source 
+            src="forest.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="forest-sound" onclick="toggleForest()">
+          <img
+          src="https://img.icons8.com/?size=100&id=c7F4PAaUzo4O&format=png&color=000000"
+          alt="Forest"
+          />
+          </button>
+
+
+          <audio id ="leaf-audio" loop>
+            <source 
+            src="leaf.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="leaf-sound" onclick="toggleLeaf()">
+          <img
+          src="https://img.icons8.com/?size=100&id=15803&format=png&color=000000"
+          alt="Leaf"
+          />
+          </button>
+
+
+          <audio id ="fire-audio" loop>
+            <source 
+            src="fire.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="fire-sound" onclick="toggleFire()">
+          <img
+          src="https://img.icons8.com/?size=100&id=39125&format=png&color=000000"
+          alt="Fireplace"
+          />
+          </button>
+
+
+          <audio id ="piano-audio" loop>
+            <source 
+            src="piano.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="piano-sound" onclick="togglePiano()">
+          <img
+          src="https://img.icons8.com/?size=100&id=1893&format=png&color=000000"
+          alt="Piano"
+          />
+          </button>
+
+
+          <audio id ="night-audio" loop>
+            <source 
+            src="night.mp3"
+            type="audio/mp3"
+            />
+          </audio>
+          <button id="night-sound" onclick="toggleNight()">
+          <img
+          src="https://img.icons8.com/?size=100&id=25031&format=png&color=000000"
+          alt="Night"
+          />
+        </div>
+      </section>
+
       <!-- Additional Content Section -->
       <section>
         <h2>Relax</h2>
         <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
       </section>
     </main>
 

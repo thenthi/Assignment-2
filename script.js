@@ -3,6 +3,7 @@ const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
 const progressBar = document.querySelector("#progress-bar-fill");
 audio.removeAttribute("controls");
+
 //playPauseBtn.addEventListener("click", togglePlayPause);
 audio.addEventListener("timeupdate", updateProgressBar);
 function togglePlayPause() {
@@ -20,6 +21,24 @@ function updateProgressBar() {
 }
 // Add other functionalities here
 
+//loop sound
+const loopSound = document.querySelector("#loop-sound");
+function toggleLoop() {
+  audio.loop = !audio.loop;
+  loopSound.classList.toggle("is-active", audio.loop);
+}
+
+//fast-forward
+function toggleFast() {
+  audio.currentTime = Math.max(0, audio.currentTime - 10);
+}
+
+//rewind
+function toggleSlow() {
+  audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+}
+
+//mute-unmue
 const onOffSound = document.querySelector("#on-off-sound");
 const onOffImg = document.querySelector("#on-off-img");
 audio.removeAttribute("controls");
@@ -36,8 +55,10 @@ function toggleOnOff() {
     onOffImg.src = "https://img.icons8.com/?size=100&id=7900&format=png&color=000000";
   }
 }
+
 //volumeslider
 const volumeSlider = document.querySelector("#volume-slider");
+audio.volume = volumeSlider.value / 100;
 volumeSlider.addEventListener("input", () => {
   audio.volume = volumeSlider.value / 100;
 
@@ -49,3 +70,91 @@ volumeSlider.addEventListener("input", () => {
     onOffImg.src = "https://img.icons8.com/?size=100&id=641&format=png&color=000000";
   }
 });
+
+//rainysound
+const rainyAudio = document.querySelector("#rainy-audio");
+//rainysound.addEventListener("click", toggleRainy);
+function toggleRainy() {
+  if (rainyAudio.paused) {
+    rainyAudio.play(); 
+  } else {
+    rainyAudio.pause();
+  }
+}
+
+//thunderstromsound
+const thunderstormAudio = document.querySelector("#thunderstorm-audio");
+//thunderstormsound.addEventListener("click", toggleThunderstorm);
+function toggleThunderstorm() {
+  if (thunderstormAudio.paused) {
+    thunderstormAudio.play(); 
+  } else {
+    thunderstormAudio.pause();
+  }
+}
+
+//oceanwavesound
+const oceanAudio = document.querySelector("#ocean-audio");
+//oceansound.addEventListener("click", toggleOcean);
+function toggleOcean() {
+  if (oceanAudio.paused) {
+    oceanAudio.play(); 
+  } else {
+    oceanAudio.pause();
+  }
+}
+
+//forestsound
+const forestAudio = document.querySelector("#forest-audio");
+//oceansound.addEventListener("click", toggleForest);
+function toggleForest() {
+  if (forestAudio.paused) {
+    forestAudio.play(); 
+  } else {
+    forestAudio.pause();
+  }
+}
+
+//leafsound
+const leafAudio = document.querySelector("#leaf-audio");
+//oceansound.addEventListener("click", toggleLeaf);
+function toggleLeaf() {
+  if (leafAudio.paused) {
+    leafAudio.play(); 
+  } else {
+    leafAudio.pause();
+  }
+}
+
+//firesound
+const fireAudio = document.querySelector("#fire-audio");
+//oceansound.addEventListener("click", toggleFire);
+function toggleFire() {
+  if (fireAudio.paused) {
+    fireAudio.play(); 
+  } else {
+    fireAudio.pause();
+  }
+}
+
+//pianosound
+const pianoAudio = document.querySelector("#piano-audio");
+//oceansound.addEventListener("click", toggleForest);
+function togglePiano() {
+  if (pianoAudio.paused) {
+    pianoAudio.play(); 
+  } else {
+    pianoAudio.pause();
+  }
+}
+
+//nightsound
+const nightAudio = document.querySelector("#night-audio");
+//oceansound.addEventListener("click", toggleNight);
+function toggleNight() {
+  if (nightAudio.paused) {
+    nightAudio.play(); 
+  } else {
+    nightAudio.pause();
+  }
+}
