@@ -20,11 +20,15 @@
         <a href="study.html">Study</a>
         <a href="sleep.html">Sleep</a>
       </nav>
-        <button 
-  id="focus-btn" 
-  class="focus-visible"
-  onclick="toggleFocusMode()">
-  Focus</button>
+      <button
+        id="focus-btn"
+        type="button"
+        aria-pressed="false"
+        onclick="toggleFocusMode()"
+      >
+        <span class="focus-btn-icon" aria-hidden="true"></span>
+        <span class="focus-btn-text">Focus</span>
+      </button>
     </header>
 
     <!-- Main Content Section -->
@@ -33,12 +37,14 @@
        <div class="main-content">
           <p class="left-side">Ambient audio player</p>
           <h1>Study Music</h1>
-          <p class="intro">
-            Choose a calm sound, keep the controls close, and settle into a
-            cleaner listening space.
+          <p class="intro" 
+          style ="text-align:justify">
+           This audio is designed to support studying and concentration by using light and slightly playful melodies that help reduce distractions and improve focus. 
+           The soft background sounds create a peaceful environment, allowing users to stay productive and maintain attention for longer periods of time. In addition to the ambient music, 
+           I also included several daily sounds that are slightly different from the relax section, helping create a more comfortable and immersive study atmosphere.
           </p>
     <!-- Media Player Section -->
-       <div class="media-player">
+       <div class="media-player focus-target">
          <div class="track-info">
               <span>Now playing</span>
             </div>
@@ -140,7 +146,8 @@
           </div> 
        </div>
 
-          <div class="main-image">
+          <div class="main-image"
+          style = "margin-bottom: -175px ;">
 
 
           <audio id="rainy-audio" loop>
@@ -229,13 +236,13 @@
 
           <audio id ="piano-audio" loop>
             <source 
-            src="piano.mp3"
+            src="coffee.mp3"
             type="audio/mp3"
             />
           </audio>
           <button id="piano-sound" onclick="togglePiano()">
           <img
-          src="https://img.icons8.com/?size=100&id=1893&format=png&color=000000"
+          src="https://img.icons8.com/?size=100&id=zg1pOABWXacy&format=png&color=000000"
           alt="Piano"
           />
           </button>
@@ -243,25 +250,16 @@
 
           <audio id ="night-audio" loop>
             <source 
-            src="night.mp3"
+            src="railway.mp3"
             type="audio/mp3"
             />
           </audio>
           <button id="night-sound" onclick="toggleNight()">
           <img
-          src="https://img.icons8.com/?size=100&id=25031&format=png&color=000000"
+          src="https://img.icons8.com/?size=100&id=7348&format=png&color=000000"
           alt="Night"
           />
         </div>
       </section>
-
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-    </footer>
   </body>
 </html>

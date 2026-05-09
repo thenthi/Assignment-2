@@ -17,6 +17,8 @@ function togglePlayPause() {
   }
 }
 function updateProgressBar() {
+  if (!Number.isFinite(audio.duration)) return;
+
   const value = (audio.currentTime / audio.duration) * 100;
   progressBar.style.width = value + "%";
 }
@@ -161,32 +163,46 @@ function toggleNight() {
 }
 
 //seekslider
-//click to exact time-stamp
-progressContainer.addEventListener("click", (e) => {
+let isSeeking = false;
+
+function getSeekPercent(e) {
   const rect = progressContainer.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const width = rect.width;
-  const percent = clickX / width;
+  const position = e.clientX - rect.left;
+  return Math.max(0, Math.min(1, position / rect.width));
+}
+
+function seekToPointer(e) {
+  if (!Number.isFinite(audio.duration)) return;
+
+  const percent = getSeekPercent(e);
   audio.currentTime = percent * audio.duration;
+  progressBar.style.width = percent * 100 + "%";
+  currentTimeText.textContent = formatTime(audio.currentTime);
+}
+
+progressContainer.addEventListener("pointerdown", (e) => {
+  isSeeking = true;
+  progressContainer.classList.add("is-seeking");
+  progressContainer.setPointerCapture(e.pointerId);
+  seekToPointer(e);
 });
 
-//drag to exact time-stamp
-let isDragging = false;
-progressContainer.addEventListener("mousedown", () => {
-  isDragging = true;
+progressContainer.addEventListener("pointermove", (e) => {
+  if (!isSeeking) return;
+  seekToPointer(e);
 });
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-});
-document.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
 
-  const rect = progressContainer.getBoundingClientRect();
-  const moveX = e.clientX - rect.left;
-  const width = rect.width;
-  let percent = moveX / width;
-  percent = Math.max(0, Math.min(1, percent));
-  audio.currentTime = percent * audio.duration;
+progressContainer.addEventListener("pointerup", (e) => {
+  if (!isSeeking) return;
+  isSeeking = false;
+  progressContainer.classList.remove("is-seeking");
+  progressContainer.releasePointerCapture(e.pointerId);
+  seekToPointer(e);
+});
+
+progressContainer.addEventListener("pointercancel", () => {
+  isSeeking = false;
+  progressContainer.classList.remove("is-seeking");
 });
 
 //timestamp
@@ -217,14 +233,15 @@ let isFocusMode = false;
 
 function toggleFocusMode() {
   const overlay = document.querySelector("#focus-overlay");
+  const focusBtn = document.querySelector("#focus-btn");
+  const focusBtnText = document.querySelector(".focus-btn-text");
 
   isFocusMode = !isFocusMode;
 
-  if (isFocusMode) {
-    overlay.classList.remove("hidden");
-  } else {
-    overlay.classList.add("hidden");
-  }
+  overlay.classList.toggle("hidden", !isFocusMode);
+  document.body.classList.toggle("is-focus-mode", isFocusMode);
+  focusBtn.setAttribute("aria-pressed", String(isFocusMode));
+  focusBtnText.textContent = isFocusMode ? "Exit focus" : "Focus";
 }
 
 //back to start

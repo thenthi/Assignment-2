@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  animation: colorChange 80s infinite alternate;
+  animation: colorChange 70s infinite alternate;
 }
 
 button,
@@ -117,6 +117,111 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   color: var(--text);
   background: #ffffff;
   box-shadow: 0 8px 18px rgba(31, 42, 39, 0.08);
+}
+
+#focus-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.32), rgba(31, 42, 39, 0.28)),
+    rgba(238, 243, 239, 0.68);
+  backdrop-filter: blur(8px) saturate(0.9);
+  z-index: 80;
+}
+
+.hidden {
+  display: none;
+}
+
+.focus-visible {
+  position: relative;
+  z-index: 120;
+}
+
+#focus-btn {
+  position: relative;
+  z-index: 120;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 116px;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(47, 125, 103, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(31, 42, 39, 0.1);
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease;
+}
+
+#focus-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47, 125, 103, 0.5);
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(31, 42, 39, 0.14);
+}
+
+#focus-btn:focus-visible {
+  outline: 3px solid rgba(47, 125, 103, 0.28);
+  outline-offset: 3px;
+}
+
+.focus-btn-icon {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 4px #ffffff;
+}
+
+body.is-focus-mode {
+  overflow: hidden;
+}
+
+body.is-focus-mode .site-header {
+  z-index: 130;
+  border-color: transparent;
+  background: transparent;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+body.is-focus-mode .logo,
+body.is-focus-mode .navbar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.is-focus-mode .focus-target {
+  z-index: 120;
+  box-shadow:
+    0 26px 80px rgba(31, 42, 39, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+body.is-focus-mode #focus-btn {
+  border-color: rgba(47, 125, 103, 0.7);
+  background: var(--accent);
+  color: #ffffff;
+  pointer-events: auto;
+  box-shadow: 0 18px 38px rgba(47, 125, 103, 0.25);
+}
+
+body.is-focus-mode .focus-btn-icon {
+  background: #ffffff;
+  box-shadow: inset 0 0 0 4px var(--accent);
 }
 
 /* Create a container for the main content */
@@ -238,6 +343,7 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
 }
 
 .media-player {
+  position: relative;
   width: 100%;
   display: grid;
   gap: 18px;
@@ -338,23 +444,75 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
 }
 
 .progress-bar {
+  position: relative;
   border-radius: 50px;
-  border: 1px solid rgb(104, 104, 104);
+  border: 1px solid rgba(31, 42, 39, 0.22);
   width: 100%;
-  height: 10px;
-  background: #b8bebc;
+  height: 12px;
+  background: rgba(31, 42, 39, 0.16);
   margin-top: 10px;
-  overflow: hidden;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
   z-index: 4000;
+  box-shadow: inset 0 1px 2px rgba(31, 42, 39, 0.14);
+  transition:
+    height 0.16s ease,
+    border-color 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0;
 }
 
 .progress-bar span {
+  position: relative;
   display: block;
   width: 0;
   height: 100%;
   border-radius: inherit;
-  transition: width 0.25s ease;
-  animation: colorChange 80s infinite alternate;
+  background: var(--accent);
+  transition: width 0.12s linear;
+  animation: colorChange 70s infinite alternate;
+  will-change: width;
+}
+
+.progress-bar span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 5px 14px rgba(31, 42, 39, 0.2);
+  transform: translateY(-50%) scale(0.9);
+  opacity: 0;
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.progress-bar:hover,
+.progress-bar.is-seeking {
+  height: 14px;
+  border-color: rgba(47, 125, 103, 0.42);
+  background: rgba(47, 125, 103, 0.16);
+}
+
+.progress-bar:hover span::after,
+.progress-bar.is-seeking span::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.progress-bar.is-seeking span {
+  transition: none;
 }
 
 #time-box{
@@ -365,31 +523,6 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   font-size: 12px;
   margin-bottom: -15px;
   margin-top: -5px;
-  z-index: 4000;
-}
-
-#focus-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  z-index: 4000;
-}
-
-.hidden {
-  display: none;
-}
-
-.focus-visible {
-  position: relative;
-  z-index: 9999;
-}
-
-#focus-btn {
-  position: relative;
   z-index: 4000;
 }
 
