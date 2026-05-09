@@ -128,13 +128,14 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   gap: clamp(24px, 5vw, 64px);
   padding: 46px 0 34px;
 }
-/* imgage on right hand*/
+
+/* imgage on left and right hand*/
 .main-content {
   max-width: 560px;
 }
 
 .main-image {
-  margin-top: 180px;
+  margin-top: 190px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-left: 20px;
@@ -161,6 +162,16 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   filter: none;
   opacity: 1;
   transform: scale(1.1);
+}
+
+#time-box{
+  display:inline-block;
+  width: 80px;
+  text-align: center;
+  color:#2f7d67;
+  font-size: 12px;
+  margin-bottom: -15px;
+  margin-top: -5px;
 }
 
 #rainy-sound {

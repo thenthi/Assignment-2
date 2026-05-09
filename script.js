@@ -2,6 +2,7 @@ const audio = document.querySelector("#custom-audio-player");
 const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
 const progressBar = document.querySelector("#progress-bar-fill");
+const progressContainer = document.querySelector(".progress-bar");
 audio.removeAttribute("controls");
 
 //playPauseBtn.addEventListener("click", togglePlayPause);
@@ -158,3 +159,56 @@ function toggleNight() {
     nightAudio.pause();
   }
 }
+
+//seekslider
+//click to exact time-stamp
+progressContainer.addEventListener("click", (e) => {
+  const rect = progressContainer.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const width = rect.width;
+  const percent = clickX / width;
+  audio.currentTime = percent * audio.duration;
+});
+
+//drag to exact time-stamp
+let isDragging = false;
+progressContainer.addEventListener("mousedown", () => {
+  isDragging = true;
+});
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  const rect = progressContainer.getBoundingClientRect();
+  const moveX = e.clientX - rect.left;
+  const width = rect.width;
+  let percent = moveX / width;
+  percent = Math.max(0, Math.min(1, percent));
+  audio.currentTime = percent * audio.duration;
+});
+
+//timestamp
+const currentTimeText = document.querySelector("#curtimetext");
+const durationText = document.querySelector("#durtimetext");
+
+// format thời gian (mm:ss)
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return (
+    String(minutes).padStart(2, "0") +
+    ":" +
+    String(seconds).padStart(2, "0")
+  );
+}
+
+audio.addEventListener("loadedmetadata", () => {
+  durationText.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  currentTimeText.textContent = formatTime(audio.currentTime);
+});
+
