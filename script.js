@@ -226,3 +226,37 @@ function toggleFocusMode() {
     overlay.classList.add("hidden");
   }
 }
+
+//back to start
+function toggleStart() {
+  audio.currentTime = 0;
+}
+
+//next part 2
+function toggleNext () {
+  audio.currentTime = audio.duration;
+   window.location.href = "study.html";
+}
+
+//back part 1
+function toggleBack1 () {
+  audio.currentTime = audio.duration;
+  window.location.href = "index.html";
+}
+
+//back part 2
+function toggleBack2 () {
+  audio.currentTime = audio.duration;
+  window.location.href = "study.html";
+}
+
+//next part 1
+function toggleNext1 () {
+  audio.currentTime = audio.duration;
+  window.location.href = "sleep.html";
+}
+
+//End
+function toggleEnd () {
+  audio.currentTime = audio.duration;
+}
