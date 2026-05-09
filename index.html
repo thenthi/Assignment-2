@@ -10,6 +10,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+     <div id="focus-overlay" class="hidden"></div>
 
     <!-- Header Section -->
     <header class="site-header">
@@ -19,6 +20,11 @@
         <a href="#Sleeping">Sleeping</a>
         <a href="#Studying">Studying</a>
       </nav>
+        <button 
+  id="focus-btn" 
+  class="focus-visible"
+  onclick="toggleFocusMode()">
+  Focus</button>
     </header>
 
     <!-- Main Content Section -->
@@ -43,12 +49,12 @@
           />
         </audio>
 
-          <div id="time-box">
+          <div id="time-box" class="focus-visible">
             <span id="curtimetext">00:00</span> /
             <span id="durtimetext">00:00</span>
           </div>
 
-          <div class="progress-bar">
+          <div class="progress-bar focus-visible">
             <span id="progress-bar-fill"></span>
           </div>
 

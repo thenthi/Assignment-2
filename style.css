@@ -129,7 +129,7 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   padding: 46px 0 34px;
 }
 
-/* imgage on left and right hand*/
+/* imgage on right side*/
 .main-content {
   max-width: 560px;
 }
@@ -162,16 +162,6 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   filter: none;
   opacity: 1;
   transform: scale(1.1);
-}
-
-#time-box{
-  display:inline-block;
-  width: 80px;
-  text-align: center;
-  color:#2f7d67;
-  font-size: 12px;
-  margin-bottom: -15px;
-  margin-top: -5px;
 }
 
 #rainy-sound {
@@ -355,6 +345,7 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   background: #b8bebc;
   margin-top: 10px;
   overflow: hidden;
+  z-index: 4000;
 }
 
 .progress-bar span {
@@ -364,6 +355,42 @@ I search for which color is help people giảm mỏi mắt và feel relax when t
   border-radius: inherit;
   transition: width 0.25s ease;
   animation: colorChange 80s infinite alternate;
+}
+
+#time-box{
+  display:inline-block;
+  width: 80px;
+  text-align: center;
+  color:#2f7d67;
+  font-size: 12px;
+  margin-bottom: -15px;
+  margin-top: -5px;
+  z-index: 4000;
+}
+
+#focus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 4000;
+}
+
+.hidden {
+  display: none;
+}
+
+.focus-visible {
+  position: relative;
+  z-index: 9999;
+}
+
+#focus-btn {
+  position: relative;
+  z-index: 4000;
 }
 
 

@@ -212,3 +212,17 @@ audio.addEventListener("timeupdate", () => {
   currentTimeText.textContent = formatTime(audio.currentTime);
 });
 
+//Focus mode
+let isFocusMode = false;
+
+function toggleFocusMode() {
+  const overlay = document.querySelector("#focus-overlay");
+
+  isFocusMode = !isFocusMode;
+
+  if (isFocusMode) {
+    overlay.classList.remove("hidden");
+  } else {
+    overlay.classList.add("hidden");
+  }
+}
