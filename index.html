@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,15 +11,16 @@
   </head>
   <body>
      <div id="focus-overlay" class="hidden"></div>
+     
 
     <!-- Header Section -->
     <header class="site-header">
       <a class="logo" href="#">Focus Flow</a>
-      <nav class="navbar" aria-label="Main navigation">
-        <a href="index.html">Relax</a>
-        <a href="study.html">Study</a>
-        <a href="sleep.html">Sleep</a>
-      </nav>
+ <nav class="navbar" aria-label="Main navigation">
+  <a class="active" href="index.html">Relax</a>
+  <a href="study.html">Study</a>
+  <a href="sleep.html">Sleep</a>
+</nav>
       <button
         id="focus-btn"
         type="button"
@@ -29,13 +31,21 @@
         <span class="focus-btn-text">Focus</span>
       </button>
     </header>
+    <video autoplay loop muted plays-inline 
+    class ="back-video" id ="bg-video2">
+      <source src ="relax.mp4" type ="video/mp4">
+    </video>
+
+<button id = "change-bg-btn" onclick="nextRelaxBackground()">
+  Change Background
+</button>
 
     <!-- Main Content Section -->
     <main>
       <section class="container">
        <div class="main-content">
           <p class="left-side">Ambient audio player</p>
-          <h1>Relax Music</h1>
+          <h1 style = "color : white">Relax Music</h1>
           <p class="intro"
           style="text-align: justify;">
             This audio can help you relax because it features an ambient melody that helps reduce stress and create a calming atmosphere for the mind. 
@@ -49,7 +59,7 @@
             </div>
         <audio id="custom-audio-player" controls>
           <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+            src="sleep.mp3"
             type="audio/mp3"
           />
         </audio>
@@ -160,6 +170,7 @@
             alt="Rainy"
           />
           </button>
+          
 
 
           <audio id ="thunderstorm-audio" loop>
