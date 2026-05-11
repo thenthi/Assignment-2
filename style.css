@@ -1,5 +1,4 @@
 :root {
-
   --surface-soft: #f6f8f6;
   --text: #1f2a27;
   --muted: #66736f;
@@ -49,15 +48,13 @@ a {
 
 /* Add additional styles as needed */
 
+/* Background video*/
 .back-video {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  transition: opacity 0.5s ease;
 }
 
 #change-bg-btn {
