@@ -1,6 +1,5 @@
 :root {
-  --bg: #eef3ef;
-  --surface: #ffffff;
+
   --surface-soft: #f6f8f6;
   --text: #1f2a27;
   --muted: #66736f;
@@ -304,6 +303,7 @@ body.is-focus-mode .focus-btn-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .sound-volume {
@@ -381,7 +381,7 @@ body.is-focus-mode .focus-btn-icon {
 /* edit left side*/
 .left-side {
   margin-bottom: 10px;
-  color: var(--accent);
+  color: #01ab7b;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.14em;

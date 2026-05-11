@@ -431,8 +431,8 @@ function toggleEnd () {
 //bg-video1
 const bgVideo2 = document.querySelector("#bg-video2");
 const relaxBackgrounds = [
-  "relax1.mp4",
   "relax.mp4",
+  "relax1.mp4",
   "relax2.mp4",
 ];
 let currentRelaxBg = 0;
