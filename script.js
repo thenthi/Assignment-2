@@ -39,7 +39,7 @@ function updateProgressBar() {
 
 /*These are the three main functions that I created for the audio player: loop, fast-forward, and rewind. 
 I used ChatGPT to help explain this part, and I was quite surprised because the logic was actually easier than I expected, 
-so it did not take me too much time to understand.
+so it did not take me too much time to understand. Then I follow step by step and fix it base on my knowledge
 
 The line audio.loop is used to enable or disable the loop mode of the audio. 
 The next line is used to add or remove a class in order to change the appearance of the loop button when loop mode is active.
@@ -117,91 +117,156 @@ Since I already understood how that function worked, I was able to write these f
 
 //rainysound
 const rainyAudio = document.querySelector("#rainy-audio");
+const rainyBtn = document.querySelector("#rainy-sound");
+const rainyVolume = document.querySelector("#rainy-volume");
 //rainysound.addEventListener("click", toggleRainy);
 function toggleRainy() {
   if (rainyAudio.paused) {
     rainyAudio.play(); 
+    rainyBtn.classList.add("active");
   } else {
     rainyAudio.pause();
+    rainyBtn.classList.remove("active");
   }
 }
+rainyVolume.addEventListener("input", () => {
+  rainyAudio.volume =
+    rainyVolume.value / 100;
+})
+
 
 //thunderstromsound
 const thunderstormAudio = document.querySelector("#thunderstorm-audio");
+const thunderstormBtn = document.querySelector("#thunderstorm-sound");
+const thunderstormVolume = document.querySelector("#thunderstorm-volume");
 //thunderstormsound.addEventListener("click", toggleThunderstorm);
 function toggleThunderstorm() {
   if (thunderstormAudio.paused) {
     thunderstormAudio.play(); 
+    thunderstormBtn.classList.add("active");
   } else {
     thunderstormAudio.pause();
+    thunderstormBtn.classList.remove("active");
   }
 }
+thunderstormVolume.addEventListener("input", () => {
+  thunderstormAudio.volume =
+    thunderstormVolume.value / 100;
+})
 
 //oceanwavesound
 const oceanAudio = document.querySelector("#ocean-audio");
+const oceanBtn = document.querySelector("#ocean-sound");
+const oceanVolume = document.querySelector("#ocean-volume");
 //oceansound.addEventListener("click", toggleOcean);
 function toggleOcean() {
   if (oceanAudio.paused) {
     oceanAudio.play(); 
+    oceanBtn.classList.add("active");
   } else {
     oceanAudio.pause();
+    oceanBtn.classList.remove("active");
   }
 }
+oceanVolume.addEventListener("input", () => {
+  oceanAudio.volume =
+    oceanVolume.value / 100;
+})
 
 //forestsound
 const forestAudio = document.querySelector("#forest-audio");
+const forestBtn = document.querySelector("#forest-sound");
+const forestVolume = document.querySelector("#forest-volume");
 //oceansound.addEventListener("click", toggleForest);
 function toggleForest() {
   if (forestAudio.paused) {
     forestAudio.play(); 
+    forestBtn.classList.add("active");
   } else {
     forestAudio.pause();
+    forestBtn.classList.remove("active");
   }
 }
+forestVolume.addEventListener("input", () => {
+  forestAudio.volume =
+    forestVolume.value / 100;
+})
 
 //leafsound
 const leafAudio = document.querySelector("#leaf-audio");
+const leafBtn = document.querySelector("#leaf-sound");
+const leafVolume = document.querySelector("#leaf-volume");
 //oceansound.addEventListener("click", toggleLeaf);
 function toggleLeaf() {
   if (leafAudio.paused) {
     leafAudio.play(); 
+    leafBtn.classList.add("active");
   } else {
     leafAudio.pause();
+    leafBtn.classList.remove("active");
   }
 }
+leafVolume.addEventListener("input", () => {
+  leafAudio.volume =
+    leafVolume.value / 100;
+})
 
 //firesound
 const fireAudio = document.querySelector("#fire-audio");
+const fireBtn = document.querySelector("#fire-sound");
+const fireVolume = document.querySelector("#fire-volume");
 //oceansound.addEventListener("click", toggleFire);
 function toggleFire() {
   if (fireAudio.paused) {
     fireAudio.play(); 
+    fireBtn.classList.add("active");
   } else {
     fireAudio.pause();
+    fireBtn.classList.remove("active");
   }
 }
+fireVolume.addEventListener("input", () => {
+  fireAudio.volume =
+    fireVolume.value / 100;
+})
 
 //pianosound
 const pianoAudio = document.querySelector("#piano-audio");
+const pianoBtn = document.querySelector("#piano-sound");
+const pianoVolume = document.querySelector("#piano-volume");
 //oceansound.addEventListener("click", toggleForest);
 function togglePiano() {
   if (pianoAudio.paused) {
     pianoAudio.play(); 
+    pianoBtn.classList.add("active");
   } else {
     pianoAudio.pause();
+    pianoBtn.classList.remove("active");
   }
 }
+pianoVolume.addEventListener("input", () => {
+  pianoAudio.volume =
+    pianoVolume.value / 100;
+})
 
 //nightsound
 const nightAudio = document.querySelector("#night-audio");
+const nightBtn = document.querySelector("#night-sound");
+const nightVolume = document.querySelector("#night-volume");
 //oceansound.addEventListener("click", toggleNight);
 function toggleNight() {
   if (nightAudio.paused) {
     nightAudio.play(); 
+    nightBtn.classList.add("active");
   } else {
     nightAudio.pause();
+    nightBtn.classList.remove("active");
   }
 }
+nightVolume.addEventListener("input", () => {
+  nightAudio.volume =
+    nightVolume.value / 100;
+})
 
 /* This section was more difficult for me compared to the previous audio functions because it involved dragging interactions and multiple event listeners working together. 
 The main purpose of this section is to allow users to drag the progress bar to change the playback position of the audio. 
@@ -337,7 +402,7 @@ function toggleStart() {
 //next part 2
 function toggleNext () {
   audio.currentTime = audio.duration;
-   window.location.href = "study.html";
+   window.location.href = "study.html"; //This one I have to ask chatGPT that how to connect another page, and I wrote it
 }
 
 //back part 1

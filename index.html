@@ -156,25 +156,30 @@
        </div>
 
           <div class="main-image" 
-          style= "margin-bottom: -87px ;">
+          style= "margin-bottom: -85px ;">
 
+        <div class="sound-item">
 
-          <audio id="rainy-audio" loop>
-          <source 
-          src="rainy.mp3"
-          type="audio/mp3"
+         <audio id="rainy-audio" loop>
+         <source
+            src="rainy.mp3"
+            type="audio/mp3"
           />
-          </audio>
-          <button id="rainy-sound" onclick="toggleRainy()">
-          <img
-            src="https://img.icons8.com/?size=100&id=656&format=png&color=000000"
-            alt="Rainy"
-          />
+         </audio>
+          <button
+            id="rainy-sound" onclick="toggleRainy()">
+           <img
+                src="https://img.icons8.com/?size=100&id=656&format=png&color=000000"
+                alt="Rainy"
+            />
           </button>
-          
+          <input type="range" min="0" max="100" value="100" id="rainy-volume" class="sound-volume" /> 
+        </div>    
+  
 
+        <div class="sound-item">
 
-          <audio id ="thunderstorm-audio" loop>
+        <audio id ="thunderstorm-audio" loop>
             <source 
             src="thunderstorm.mp3"
             type="audio/mp3"
@@ -186,7 +191,11 @@
           alt="Thunderstorm"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="thunderstorm-volume" class="sound-volume" /> 
+          </div>
 
+
+          <div class="sound-item">
 
           <audio id ="ocean-audio" loop>
             <source 
@@ -200,7 +209,11 @@
           alt="Ocenwave"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="ocean-volume" class="sound-volume" />
+          </div>
 
+
+          <div class ="sound-item">
 
           <audio id ="forest-audio" loop>
             <source 
@@ -214,7 +227,11 @@
           alt="Forest"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="forest-volume" class="sound-volume" />
+          </div>
 
+
+          <div class ="sound-item">
 
           <audio id ="leaf-audio" loop>
             <source 
@@ -228,8 +245,11 @@
           alt="Leaf"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="leaf-volume" class="sound-volume" />
+          </div>
 
 
+          <div class ="sound-item">
           <audio id ="fire-audio" loop>
             <source 
             src="fire.mp3"
@@ -242,8 +262,11 @@
           alt="Fireplace"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="fire-volume" class="sound-volume" />
+          </div>
 
 
+          <div class ="sound-item">
           <audio id ="piano-audio" loop>
             <source 
             src="piano.mp3"
@@ -256,8 +279,11 @@
           alt="Piano"
           />
           </button>
+          <input type="range" min="0" max="100" value="100" id="piano-volume" class="sound-volume" />
+          </div>
 
 
+          <div class = "sound-item">
           <audio id ="night-audio" loop>
             <source 
             src="night.mp3"
@@ -269,6 +295,10 @@
           src="https://img.icons8.com/?size=100&id=25031&format=png&color=000000"
           alt="Night"
           />
+          </button>
+          <input type="range" min="0" max="100" value="100" id="night-volume" class="sound-volume" />
+          </div>
+
         </div>
       </section>
   </body>
