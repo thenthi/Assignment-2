@@ -39,8 +39,12 @@
       <source src ="study.mp4" type ="video/mp4">
     </video>
 
+<!-- As mentioned earlier, each section uses different backgrounds depending on its purpose. 
+For the study section, I chose softer and more peaceful animated videos such as study desks, computers, desk lamps, coffee cups, and rainy weather, 
+because I felt these visuals matched the study atmosphere and created a more focused and comfortable environment for users. -->
+
 <button id = "change-bg-btn" onclick="nextStudyBackground()">
-  Change Background
+  <b>Change Background</b>
 </button>
 
     <!-- Main Content Section -->
@@ -51,15 +55,19 @@
           <h1 style = "color : white">Study Music</h1>
           <p class="intro" 
           style ="text-align:justify">
-           This audio is designed to support studying and concentration by using light and slightly playful melodies that help reduce distractions and improve focus. 
-           The soft background sounds create a peaceful environment, allowing users to stay productive and maintain attention for longer periods of time. In addition to the ambient music, 
-           I also included several daily sounds that are slightly different from the relax section, helping create a more comfortable and immersive study atmosphere.
-          </p>
+           This audio is designed to support studying and concentration through light and slightly playful melodies that help reduce distractions and improve focus.
+The soft background sounds create a peaceful environment that helps users stay productive for longer periods of time.
+I also included several daily sounds to create a more immersive and comfortable study atmosphere. </p>
     <!-- Media Player Section -->
        <div class="media-player focus-target">
          <div class="track-info">
               <span>Now playing</span>
             </div>
+
+<!-- I also chose different music styles for the study and relax sections. 
+While the relax music is slightly more emotional and atmospheric, the study music is softer and more controlled, 
+with a balanced rhythm that helps users focus more easily without becoming too distracting. -->
+
         <audio id="custom-audio-player" controls>
           <source
             src="study.mp3"
@@ -159,8 +167,11 @@
        </div>
 
           <div class="main-image"
-          style = "margin-bottom: -162px ;">
+          style = "margin-bottom: -105px ;">
 
+<!-- In this section, I replaced some of the ambient sounds to better match the study theme, 
+such as keyboard typing sounds, writing on paper, and page-turning sounds. 
+I felt these sounds helped create a more realistic and immersive study atmosphere for users. -->
 
           <div class ="sound-item">
           <audio id="rainy-audio" loop>
@@ -176,7 +187,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="rainy-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Rainy </b> </p>
+          <p style="color: #2a2a2a"><b> Rainy </b> </p>
           </div>
 
 
@@ -194,7 +205,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="thunderstorm-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Stormy </b> </p>
+          <p style="color: #2a2a2a"><b> Stormy </b> </p>
           </div>
 
 
@@ -212,7 +223,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="ocean-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Wave </b> </p>
+          <p style="color: #2a2a2a"><b> Wave </b> </p>
           </div>
 
 
@@ -230,7 +241,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="forest-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Forest </b> </p>
+          <p style="color: #2a2a2a"><b> Forest </b> </p>
           </div>
 
 
@@ -248,7 +259,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="leaf-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Writting </b> </p>
+          <p style="color: #2a2a2a"><b> Writting </b> </p>
           </div>
 
 
@@ -266,7 +277,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="fire-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Fireplace </b> </p> 
+          <p style="color: #2a2a2a"><b> Fireplace </b> </p> 
           </div>
 
 
@@ -284,7 +295,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="piano-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Keyboard </b> </p>
+          <p style="color: #2a2a2a"><b> Keyboard </b> </p>
           </div>
 
 
@@ -302,7 +313,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="night-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Flipping </b> </p>
+          <p style="color: #2a2a2a"><b> Flipping </b> </p>
           </div>
 
         </div>

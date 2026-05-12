@@ -13,8 +13,6 @@
   </head>
   <body>
      <div id="focus-overlay" class="hidden"></div>
-     
-
     <!-- Header Section -->
     <header class="site-header">
       <a class="logo" href="#">Focus Flow</a>
@@ -23,6 +21,12 @@
   <a href="study.html">Study</a>
   <a href="sleep.html">Sleep</a>
 </nav>
+
+<!-- I designed this focus button to help reduce distraction for users. 
+If users find the animated backgrounds distracting while studying or relaxing, they can enable this mode. 
+When focus mode is active, the smaller sound controls and background visuals become hidden, 
+allowing users to concentrate more easily. I wanted to provide users with two different options depending on their preferences. -->
+
       <button
         id="focus-btn"
         type="button"
@@ -32,14 +36,22 @@
         <span class="focus-btn-icon" aria-hidden="true"></span>
         <span class="focus-btn-text">Focus</span>
       </button>
+
+      <!-- I decided to use animated video backgrounds because I noticed that many people often listen to music on YouTube 
+or use relaxing music websites while studying or relaxing, and those platforms commonly use calm animated visuals. 
+Because of this, I wanted to include a similar chill atmosphere in my own website design to create a more immersive and relaxing experience for users. -->
     </header>
     <video autoplay loop muted plays-inline 
     class ="back-video" id ="bg-video2">
       <source src ="relax.mp4" type ="video/mp4">
     </video>
 
+<!-- Each section uses different background videos to match its mood and purpose. 
+For the relax section, I chose peaceful animated backgrounds such as beaches, rainy cafés, 
+and a cat standing in front of a field because I felt these visuals created a calm and peaceful atmosphere for users. -->
+
 <button id = "change-bg-btn" onclick="nextRelaxBackground()">
-  Change Background
+  <b>Change Background</b>
 </button>
 
     <!-- Main Content Section -->
@@ -50,11 +62,15 @@
           <h1 style = "color : white">Relax Music</h1>
           <p class="intro"
           style="text-align: justify;">
-            This audio can help you relax because it features an ambient melody that helps reduce stress and create a calming atmosphere for the mind. 
-            In addition to the ambient music, I also included several daily sounds, 
-            which I researched and found can help people feel more relaxed and mentally at ease.
+            This audio can help users relax because it uses soft and uplifting melodies that help reduce stress and create a calming atmosphere for the mind.
+In addition to the music, I also included several daily ambient sounds that I researched and found could help people feel more relaxed and mentally comfortable.
           </p>
+
     <!-- Media Player Section -->
+
+     <!-- In this section, I designed the main colour palette of the buttons and boxes using black, white, grey, and dark blue tones. 
+I chose these colours because the animated backgrounds already contain a lot of movement and colour, 
+so I wanted the main interface elements to contrast with the background and create a more balanced and visually harmonious design. -->
        <div class="media-player focus-target">
          <div class="track-info">
               <span>Now playing</span>
@@ -74,6 +90,9 @@
           <div class="progress-bar focus-visible">
             <span id="progress-bar-fill"></span>
           </div>
+
+<!-- I also felt that adding controls such as play/pause, fast-forward, rewind, next button, skip to start, and volume sliders 
+was necessary for a music website because these features help users interact with the audio more easily and improve the overall user experience. -->
 
            <div class="custom-controls"
            style="justify-content: center;">
@@ -159,6 +178,11 @@
           <div class="main-image" 
           style= "margin-bottom: -85px ;">
 
+          <!-- In this section, I decided to design and include smaller daily ambient sounds that match each category. 
+For example, in the relax section, I felt that sounds such as rain and thunder would help create a calmer atmosphere. 
+As the Scientific Reports study found, listening to natural sounds relaxes us. 
+Treasure confirms this, and offers bird songs as another sound people find very comforting and reassuring.  -->
+
         <div class="sound-item">
 
          <audio id="rainy-audio" loop>
@@ -175,7 +199,7 @@
             />
           </button>
           <input type="range" min="0" max="100" value="100" id="rainy-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Rainy</b> </p>
+          <p style="color: #2a2a2a"><b> Rainy</b> </p>
         </div>    
   
 
@@ -194,7 +218,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="thunderstorm-volume" class="sound-volume" /> 
-          <p style="color: #4c4c4c"><b> Stormy</b> </p>
+          <p style="color: #2a2a2a"><b> Stormy</b> </p>
           </div>
 
 
@@ -213,7 +237,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="ocean-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Wave </b> </p>
+          <p style="color: #2a2a2a"><b> Wave </b> </p>
           </div>
 
 
@@ -232,7 +256,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="forest-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Forest </b> </p>
+          <p style="color: #2a2a2a"><b> Forest </b> </p>
           </div>
 
 
@@ -251,7 +275,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="leaf-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Coffee</b> </p>
+          <p style="color: #2a2a2a"><b> Coffee</b> </p>
           </div>
 
 
@@ -269,7 +293,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="fire-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Fireplace</b> </p>
+          <p style="color: #2a2a2a"><b> Fireplace</b> </p>
           </div>
 
 
@@ -287,7 +311,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="piano-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Railway </b> </p>
+          <p style="color: #2a2a2a"><b> Railway </b> </p>
           </div>
 
 
@@ -305,7 +329,7 @@
           />
           </button>
           <input type="range" min="0" max="100" value="100" id="night-volume" class="sound-volume" />
-          <p style="color: #4c4c4c"><b> Night </b> </p>
+          <p style="color: #2a2a2a"><b> Night </b> </p>
           </div>
 
         </div>

@@ -1,5 +1,8 @@
-/*This section was based on an example provided in class. 
-From this example, I understood that the audio variable is stored so it can be reused multiple times throughout the script, making the code cleaner and easier to manage. */
+/* The play/pause button and progress bar below were originally provided in the class example. 
+At first, the example used a video player instead of audio. However, because my chosen theme is music for relaxation and study, 
+I felt that using video did not match the overall experience I wanted to create. 
+For this reason, I changed the media from video to audio, then continued designing and developing additional features 
+to better suit the relaxing and focus-based style of my website. */
 
 const audio = document.querySelector("#custom-audio-player");
 const playPauseBtn = document.querySelector("#play-pause-btn");
@@ -37,19 +40,13 @@ function updateProgressBar() {
 }
 // Add other functionalities here
 
-/*These are the three main functions that I created for the audio player: loop, fast-forward, and rewind. 
-I used ChatGPT to help explain this part, and I was quite surprised because the logic was actually easier than I expected, 
-so it did not take me too much time to understand. Then I follow step by step and fix it base on my knowledge
+/* These are the three main functions I created for the audio player: loop, fast-forward, and rewind. 
+I used ChatGPT to help explain the logic, then followed the steps and adjusted the code based on my own understanding. 
 
-The line audio.loop is used to enable or disable the loop mode of the audio. 
-The next line is used to add or remove a class in order to change the appearance of the loop button when loop mode is active.
+The audio.loop line is used to turn loop mode on or off, while the class toggle changes the appearance of the loop button when active. 
 
-Next are the fast-forward and rewind functions. These two functions are quite similar and relatively easy to understand, 
-although I accidentally named them the opposite way around, which made it slightly confusing at first. 
-The rewind function is used to move the audio backward by 10 seconds. 
-The Math.max() function is used to ensure that the audio time does not go below 0, preventing possible errors.
-Similarly, the fast-forward function is used to move the audio forward by 10 seconds. 
-The Math.min() function helps ensure that the audio time does not go beyond the total duration of the track.*/
+The rewind and fast-forward functions are used to move the audio backward or forward by 10 seconds. 
+Math.max() prevents the audio time from going below 0, and Math.min() prevents it from going beyond the total duration of the track. */
 
 //loop sound
 const loopSound = document.querySelector("#loop-sound");
@@ -112,8 +109,10 @@ volumeSlider.addEventListener("input", () => {
   }
 });
 
-/* The sound buttons below were also relatively simple because their logic was quite similar to the play/pause button from the section above. 
-Since I already understood how that function worked, I was able to write these functions by myself without too much difficulty, and it did not take me too much time to complete them. */
+/* Below are the lines of code for the additional ambient sounds I added to the website, 
+such as rain sounds and thunder sounds. For this section, I based the design on the features I had already created above, 
+such as the sound toggle button and volume slider, and then recreated similar functionality myself. 
+After that, I used ChatGPT to check whether the code was correct and made a few adjustments to better suit my website. */
 
 //rainysound
 const rainyAudio = document.querySelector("#rainy-audio");
@@ -305,7 +304,9 @@ function seekToPointer(e) {
 
 /* The event listeners such as pointerdown, pointermove, and pointerup are used to track each stage of the dragging interaction. 
 Although this part was quite confusing for me at first, after spending time reading through the code carefully and asking ChatGPT to explain it, 
-I was eventually able to understand the purpose and function of these lines of code. */
+I was eventually able to understand the purpose and function of these lines of code.
+After learning how the logic worked, I then adjusted and modified 
+parts of the code myself to better suit the design and interaction style of my own website. */
 
 progressContainer.addEventListener("pointerdown", (e) => {
   isSeeking = true;
@@ -428,6 +429,12 @@ function toggleEnd () {
   audio.currentTime = audio.duration;
 }
 
+/* This section was created to allow the website background to change dynamically. 
+Because I could not find a tutorial on YouTube that matched the type of interaction I wanted, 
+I used ChatGPT to help me understand and build this feature. I found this part relatively easy to learn, 
+and it only took me a few minutes to understand the overall logic. After that, I rewrote and adjusted the code myself 
+to better match the style and design of my own website. */
+
 //bg-video1
 const bgVideo2 = document.querySelector("#bg-video2");
 const relaxBackgrounds = [
@@ -436,6 +443,14 @@ const relaxBackgrounds = [
   "relax2.mp4",
 ];
 let currentRelaxBg = 0;
+
+/* This function is used to change the background, similar to the sections below. 
+Each time the function runs, the current background index increases by 1. 
+If it goes beyond the number of backgrounds in the array, it resets back to 0 
+so the backgrounds can continue looping. 
+I understood the basic idea of this function through learning and researching with ChatGPT, 
+then adjusted and implemented it myself to fit the background-changing feature of my website. */
+
 function nextRelaxBackground() {
   currentRelaxBg++;
   if (currentRelaxBg >= relaxBackgrounds.length) {
@@ -477,8 +492,6 @@ function nextBackground() {
   if (currentBg >= backgrounds.length) {
     currentBg = 0;
   }
-
-//change video1
   bgVideoo.src = backgrounds[currentBg];
   bgVideoo.load();
   bgVideoo.play();
