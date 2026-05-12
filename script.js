@@ -16,7 +16,6 @@ and the button icon will change to the pause icon. On the other hand, if the aud
 and the icon will change back to the play icon. At first, I found this slightly confusing because the image file names made it easy to misunderstand the difference between the audio state and the button’s function. */
 
 //playPauseBtn.addEventListener("click", togglePlayPause);
-audio.addEventListener("timeupdate", updateProgressBar);
 function togglePlayPause() {
   if (audio.paused || audio.ended) {
     audio.play();
@@ -31,9 +30,8 @@ function togglePlayPause() {
 If the audio does not yet have a valid duration, the function will stop running to prevent errors from happening.
 The next two lines are used to calculate the percentage of the audio that has already been played and update the width of the progress bar based on that percentage value.
 Because of this, the progress bar extends further as the audio continues playing. This part was also explained in class, so it was not too difficult for me to understand.*/
-
+audio.addEventListener("timeupdate", updateProgressBar);
 function updateProgressBar() {
-  if (!Number.isFinite(audio.duration)) return;
 
   const value = (audio.currentTime / audio.duration) * 100;
   progressBar.style.width = value + "%";
@@ -77,7 +75,6 @@ audio.removeAttribute("controls");
 function toggleOnOff() {
   if (audio.muted) {
     audio.muted = false;
-    audio.volume = 1;
     volumeSlider.value = 100;
     onOffImg.src = "https://img.icons8.com/?size=100&id=641&format=png&color=000000";
   } else {
@@ -96,7 +93,6 @@ I also learned that volumeSlider.addEventListener("input", () => { ... }) is use
 
 //volumeslider
 const volumeSlider = document.querySelector("#volume-slider");
-audio.volume = volumeSlider.value / 100;
 volumeSlider.addEventListener("input", () => {
   audio.volume = volumeSlider.value / 100;
 
@@ -294,8 +290,6 @@ After that, the percentage value from getSeekPercent(e) is used to calculate the
 At the same time, the progress bar and timestamp are also updated immediately so the interface changes in real time while the user drags the progress bar. */
 
 function seekToPointer(e) {
-  if (!Number.isFinite(audio.duration)) return;
-
   const percent = getSeekPercent(e);
   audio.currentTime = percent * audio.duration;
   progressBar.style.width = percent * 100 + "%";
