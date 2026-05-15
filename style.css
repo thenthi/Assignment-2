@@ -69,7 +69,6 @@ After that, I adjusted the positioning, colours, transformations, video size, an
   z-index: 9999;
   padding: 12px 22px;
   color: #373737;
-  border: none;
   border-radius: 999px;
   cursor: pointer;
   font-size: 14px;
@@ -105,7 +104,6 @@ so overall I found this part relatively easy to work on. */
   text-decoration:none;
   font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0;
 }
 
 /* Navigation styling */
@@ -160,7 +158,6 @@ After spending time learning and following the logic step by step, I was eventua
 and rewrite parts of the code myself to complete the feature. After that, I adjusted the colours and visual design to better match my website. */
 #focus-overlay {
   position: fixed;
-  inset: 0;
   width: 100vw;
   height: 100vh;
   background:
@@ -215,7 +212,7 @@ and rewrite parts of the code myself to complete the feature. After that, I adju
 .focus-btn-icon {
   width: 16px;
   height: 16px;
-  border: 2px solid currentColor;
+  border: 2px solid;
   border-radius: 50%;
   box-shadow: inset 0 0 0 4px #ffffff;
 }
@@ -228,8 +225,6 @@ body.is-focus-mode .site-header {
   z-index: 130;
   border-color: transparent;
   background: transparent;
-  backdrop-filter: none;
-  pointer-events: none;
 }
 
 body.is-focus-mode .logo,
@@ -249,7 +244,6 @@ body.is-focus-mode #focus-btn {
   border-color: rgba(47, 125, 103, 0.7);
   background: var(--accent);
   color: #ffffff;
-  pointer-events: auto;
   box-shadow: 0 18px 38px rgba(47, 125, 103, 0.25);
 }
 
@@ -306,13 +300,11 @@ so I used ChatGPT to help improve and refine the layout. After that, I made some
 }
 
 .main-image img:hover {
-  filter: none;
   opacity: 1;
   transform: scale(1.1);
 }
 
 .main-image button.active img {
-  filter: none;
   opacity: 1;
   transform: scale(1.1);
 }
@@ -347,59 +339,43 @@ I adjusted the size of the box, images, and the volume controls for each sound t
 After writing the code myself, I felt that the design did not look very harmonious, 
 so I used ChatGPT to help improve and refine the layout. After that, I made some additional adjustments based on my own preferences and design ideas. */
 #rainy-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;                     
   cursor: pointer;
 }
 
 
 #thunderstorm-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;               
   cursor: pointer;
 }
 
 #ocean-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;           
   cursor: pointer;
 }
 
 #forest-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;         
   cursor: pointer;
 }
 
 #leaf-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;       
   cursor: pointer;
 }
 
 #fire-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;        
   cursor: pointer;
 }
 
 #piano-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;           
   cursor: pointer;
 }
 
 #night-sound {
-  background: transparent;
-  border: none;           
-  padding: 0;            
+  background: transparent;          
   cursor: pointer;
 }
 
@@ -429,7 +405,6 @@ Since my background uses animated videos, users might have difficulty identifyin
 }
 
 .media-player {
-  position: relative;
   width: 100%;
   display: grid;
   gap: 18px;
@@ -457,24 +432,20 @@ I also used ChatGPT to help refine and simplify the code, then rewrote and remov
 .custom-controls,
 .volume-controls {
   display: flex;
-  align-items: center;
 }
 
 .custom-controls {
-  justify-content: center;
   gap: 16px;
   padding: 6px 0;
 }
 
 .volume-controls {
-  justify-content: space-between;
   gap: 14px;
   padding-top: 4px;
 }
 
 .custom-controls button,
 .volume-controls button {
-  display: grid;
   place-items: center;
   cursor: pointer;
   border: 1px solid var(--line);
@@ -536,7 +507,6 @@ while using ChatGPT to help explain and guide me through the visual effects.
 After that, I refined the hover and after effects, colours, layout, and overall styling based on my own preferences. 
 I also applied concepts I had learned, such as styling multiple classes together to make the code cleaner and more efficient. */
 .progress-bar {
-  position: relative;
   border-radius: 50px;
   border: 1px solid rgba(31, 42, 39, 0.22);
   width: 100%;
@@ -601,7 +571,6 @@ I also applied concepts I had learned, such as styling multiple classes together
 /* This section is used to adjust the running time display, text colour, font size, and other smaller visual details 
 to make the audio player look cleaner and easier to read. */
 #time-box{
-  display:inline-block;
   width: 80px;
   text-align: center;
   color:#2f7d67;
@@ -612,96 +581,88 @@ to make the audio player look cleaner and easier to read. */
   font-weight: bold;
 }
 
-
-/* Footer styling */
-footer {
-  color: var(--main-text-color);
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-}
 /*REFERENCES
 
-Adam Khoury (2014a) Audio Workshop 2 Seek and Volume Range Slider JavaScript Tutorial, YouTube, [https://www.youtube.com/watch?v=L5rnkFNSnE8](https://www.youtube.com/watch?v=L5rnkFNSnE8)
-, accessed 12 May 2026.
+Adam Khoury (2014a) Audio Workshop 2 Seek and Volume Range Slider JavaScript Tutorial, YouTube, https://www.youtube.com/watch?v=L5rnkFNSnE8,
+accessed 12 May 2026.
 
-—— (2014b) Audio Workshop 3 timeupdate Time Position JavaScript Tutorial, YouTube, [https://www.youtube.com/watch?v=uxOnTwUNxl8](https://www.youtube.com/watch?v=uxOnTwUNxl8)
-, accessed 12 May 2026.
+—— (2014b) Audio Workshop 3 timeupdate Time Position JavaScript Tutorial, YouTube, https://www.youtube.com/watch?v=uxOnTwUNxl8,
+accessed 12 May 2026.
 
-Bro Code (2024) How to create a CSS navigation bar in 6 minutes! 🧭, [www.youtube.com](http://www.youtube.com)
-, [https://www.youtube.com/watch?v=f3uCSh6LIY0](https://www.youtube.com/watch?v=f3uCSh6LIY0)
-, accessed 12 May 2026.
+Bro Code (2024) How to create a CSS navigation bar in 6 minutes!, YouTube, https://www.youtube.com/watch?v=f3uCSh6LIY0,
+accessed 12 May 2026.
 
-GreatStack (2022) How To Add Video Background In Website Using HTML And CSS Step By Step Tutorial, [www.youtube.com](http://www.youtube.com)
-, [https://www.youtube.com/watch?v=znqUwx0b0HI](https://www.youtube.com/watch?v=znqUwx0b0HI)
-, accessed 12 May 2026.
+GreatStack (2022) How To Add Video Background In Website Using HTML And CSS Step By Step Tutorial, https://www.youtube.com/watch?v=znqUwx0b0HI
+accessed 12 May 2026.
 
-Pixabay(2021) Download Coffee, Chill, Cup. Royalty-Free Stock Illustration Image, Pixabay.com, [https://pixabay.com/illustrations/coffee-chill-cup-mug-enjoy-drink-6259578/](https://pixabay.com/illustrations/coffee-chill-cup-mug-enjoy-drink-6259578/)
-, accessed 12 May 2026.
+Pixabay(2021) Download Coffee, Chill, Cup. Royalty-Free Stock Illustration Image, Pixabay.com, https://pixabay.com/illustrations/coffee-chill-cup-mug-enjoy-drink-6259578/,
+accessed 12 May 2026.
 
-Pixabay(2025) Keyboard Typing Sound Effect | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/film-special-effects-keyboard-typing-sound-effect-335503/](https://pixabay.com/sound-effects/film-special-effects-keyboard-typing-sound-effect-335503/)
-, accessed 12 May 2026.
+Pixabay(2025) Keyboard Typing Sound Effect | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/film-special-effects-keyboard-typing-sound-effect-335503/,
+accessed 12 May 2026.
 
-Pixabay (2022) Deep_South Night Sounds | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/nature-deep-south-night-sounds-115466/](https://pixabay.com/sound-effects/nature-deep-south-night-sounds-115466/)
-, accessed 12 May 2026.
+Pixabay (2022) Deep_South Night Sounds | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/nature-deep-south-night-sounds-115466/,
+accessed 12 May 2026.
 
-Pixabay (2023) A train on the Railways | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/city-a-train-on-the-railways-169416/](https://pixabay.com/sound-effects/city-a-train-on-the-railways-169416/)
-, accessed 12 May 2026.
+Pixabay (2023) A train on the Railways | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/city-a-train-on-the-railways-169416/,
+accessed 12 May 2026.
 
-Pixabay (2023) Ambience Coffee Shop 3 | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/city-ambience-coffee-shop-3-25813/](https://pixabay.com/sound-effects/city-ambience-coffee-shop-3-25813/)
-, accessed 12 May 2026.
+Pixabay (2023) Ambience Coffee Shop 3 | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/city-ambience-coffee-shop-3-25813/,
+accessed 12 May 2026.
 
-Pixabay (2023) Book Page Turn | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/film-special-effects-book-page-turn-104314/](https://pixabay.com/sound-effects/film-special-effects-book-page-turn-104314/)
-, accessed 12 May 2026.
+Pixabay (2023) Book Page Turn | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/film-special-effects-book-page-turn-104314/,
+accessed 12 May 2026.
 
-Pixabay (2023) pencil write | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/film-special-effects-pencil-write-73431/](https://pixabay.com/sound-effects/film-special-effects-pencil-write-73431/)
-, accessed 12 May 2026.
+Pixabay (2023) pencil write | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/film-special-effects-pencil-write-73431/,
+accessed 12 May 2026.
 
-Pixabay (2023) soft piano | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/musical-soft-piano-72454/](https://pixabay.com/sound-effects/musical-soft-piano-72454/)
-, accessed 12 May 2026.
+Pixabay (2023) soft piano | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/musical-soft-piano-72454/,
+accessed 12 May 2026.
 
-Pixabay (2023) Thunderstorm | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/nature-thunderstorm-14708/](https://pixabay.com/sound-effects/nature-thunderstorm-14708/)
-, accessed 12 May 2026.
+Pixabay (2023) Thunderstorm | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/nature-thunderstorm-14708/,
+accessed 12 May 2026.
 
-Pixabay (2024) Cafe, Beautiful Wallpaper, Night. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/cafe-night-rain-exterior-203645/](https://pixabay.com/videos/cafe-night-rain-exterior-203645/)
-, accessed 12 May 2026.
+Pixabay (2024) Cafe, Beautiful Wallpaper, Night. Free Stock Video, Pixabay.com, https://pixabay.com/videos/cafe-night-rain-exterior-203645/,
+accessed 12 May 2026.
 
-Pixabay (2024) Lofi, Cat, Night. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/lofi-cat-night-window-rain-cute-246243/](https://pixabay.com/videos/lofi-cat-night-window-rain-cute-246243/)
-, accessed 12 May 2026.
+Pixabay (2024) Lofi, Cat, Night. Free Stock Video, Pixabay.com, https://pixabay.com/videos/lofi-cat-night-window-rain-cute-246243/,
+accessed 12 May 2026.
 
-Pixabay (2025) Anime, Lofi, Cat. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/anime-lofi-cat-cozy-rain-312345/](https://pixabay.com/videos/anime-lofi-cat-cozy-rain-312345/)
-, accessed 12 May 2026.
+Pixabay (2025) Anime, Lofi, Cat. Free Stock Video, Pixabay.com, https://pixabay.com/videos/anime-lofi-cat-cozy-rain-312345/,
+accessed 12 May 2026.
 
-Pixabay (2025) Cafe, Interior, Coffee Shop. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/cafe-interior-coffee-shop-cozy-270557/](https://pixabay.com/videos/cafe-interior-coffee-shop-cozy-270557/)
-, accessed 12 May 2026.
+Pixabay (2025) Cafe, Interior, Coffee Shop. Free Stock Video, Pixabay.com, https://pixabay.com/videos/cafe-interior-coffee-shop-cozy-270557/,
+accessed 12 May 2026.
 
-Pixabay (2025) Forest ambience | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/nature-forest-ambience-296528/](https://pixabay.com/sound-effects/nature-forest-ambience-296528/)
-, accessed 12 May 2026.
+Pixabay (2025) Forest ambience | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/nature-forest-ambience-296528/,
+accessed 12 May 2026.
 
-Pixabay (2025) Gentle Rain for Relaxation and Sleep | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/nature-gentle-rain-for-relaxation-and-sleep-337279/](https://pixabay.com/sound-effects/nature-gentle-rain-for-relaxation-and-sleep-337279/)
-, accessed 12 May 2026.
+Pixabay (2025) Gentle Rain for Relaxation and Sleep | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/nature-gentle-rain-for-relaxation-and-sleep-337279/,
+accessed 12 May 2026.
 
-Pixabay (2025) Gif, Nature, Anime. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/gif-nature-anime-309500/](https://pixabay.com/videos/gif-nature-anime-309500/)
-, accessed 12 May 2026.
+Pixabay (2025) Gif, Nature, Anime. Free Stock Video, Pixabay.com, https://pixabay.com/videos/gif-nature-anime-309500/,
+accessed 12 May 2026.
 
-Pixabay (2025) Live Wallpaper, Cozy Cabin, Rainy Day. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/live-wallpaper-cozy-cabin-rainy-day-270983/](https://pixabay.com/videos/live-wallpaper-cozy-cabin-rainy-day-270983/)
-, accessed 12 May 2026.
+Pixabay (2025) Live Wallpaper, Cozy Cabin, Rainy Day. Free Stock Video, Pixabay.com, https://pixabay.com/videos/live-wallpaper-cozy-cabin-rainy-day-270983/,
+accessed 12 May 2026.
 
-Pixabay (2025) Ocen/ Royalty-free Music, Pixabay, [https://pixabay.com/sound-effects/nature-ocean-75393/](https://pixabay.com/sound-effects/nature-ocean-75393/)
-, accessed 12 May 2026.
+Pixabay (2025) Ocen/ Royalty-free Music, Pixabay, https://pixabay.com/sound-effects/nature-ocean-75393/,
+accessed 12 May 2026.
 
-Pixabay (2026) Anime, Lofi, Dog. Free Stock Video, Pixabay.com, [https://pixabay.com/videos/anime-lofi-dog-cute-dog-345838/](https://pixabay.com/videos/anime-lofi-dog-cute-dog-345838/)
-, accessed 12 May 2026.
+Pixabay (2026) Anime, Lofi, Dog. Free Stock Video, Pixabay.com, https://pixabay.com/videos/anime-lofi-dog-cute-dog-345838/,
+accessed 12 May 2026.
 
-Pixabay (2026) Blocked, Pixabay.com, [https://pixabay.com/videos/lofi-chill-nature-cat-sunrise-270507/](https://pixabay.com/videos/lofi-chill-nature-cat-sunrise-270507/)
-, accessed 12 May 2026.
+Pixabay (2026) Blocked, Pixabay.com, https://pixabay.com/videos/lofi-chill-nature-cat-sunrise-270507/,
+accessed 12 May 2026.
 
-Pixabay (2026) Blocked Page, Pixabay.com, [https://pixabay.com/sound-effects/nature-soft-wind-314945/](https://pixabay.com/sound-effects/nature-soft-wind-314945/)
-, accessed 12 May 2026.
+Pixabay (2026) Blocked Page, Pixabay.com, https://pixabay.com/sound-effects/nature-soft-wind-314945/,
+accessed 12 May 2026.
 
-Pixabay (2026) Fire Ambience | Royalty-free Music, Pixabay.com, [https://pixabay.com/sound-effects/film-special-effects-fire-ambience-528618/](https://pixabay.com/sound-effects/film-special-effects-fire-ambience-528618/)
-, accessed 12 May 2026.
+Pixabay (2026) Fire Ambience | Royalty-free Music, Pixabay.com, https://pixabay.com/sound-effects/film-special-effects-fire-ambience-528618/,
+accessed 12 May 2026.
 
-Wilson B (2022) The Science behind Focus, Endel, [https://endel.io/blog/the-science-behind-relaxing-sounds](https://endel.io/blog/the-science-behind-relaxing-sounds)
-, accessed 12 May 2026.
+Wilson B (2022) The Science behind Focus, Endel, https://endel.io/blog/the-science-behind-relaxing-sounds,
+accessed 12 May 2026.
 */
+
+/* ChatGPT is useddesu for translation and grammar correction */

@@ -63,12 +63,13 @@ function toggleSlow() {
   audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
 }
 
-/* For the mute and unmute section, I wrote this part mostly by myself based on the play and pause example that was already provided above.
-I thought the logic was quite similar, so I tried to recreate the functionality on my own while also applying some of the JavaScript knowledge that 
-I learned in class. Through this part, I understood more about how audio properties work and how button interactions can be connected to changing audio states and icons.*/
+/* For the mute and unmute section, I initially tried to create this functionality by myself based on the play and pause example provided above, 
+because I felt the logic was quite similar. However, the code did not work at first, so I used ChatGPT to help me identify where the problem was. 
+
+After checking the mistakes and understanding why the code was not functioning correctly, I was able to fix and rewrite the section myself. 
+Through this process, I learned more about how audio properties work and how button interactions can control different audio states and icons. */
 
 //mute-unmue
-const onOffSound = document.querySelector("#on-off-sound");
 const onOffImg = document.querySelector("#on-off-img");
 audio.removeAttribute("controls");
 //onOffsound.addEventLisrener("click", toggleOnOff);
@@ -85,7 +86,8 @@ function toggleOnOff() {
 }
 
 /* For the volume slider section, I watched a tutorial on YouTube and followed the steps to implement it. 
-I thought the logic was quite similar to the mute and unmute function, but the way the variables were connected felt slightly more complicated at first.*/
+I thought the logic was quite similar to the mute and unmute function, but the way the variables were connected felt slightly more complicated at first. And then, after all, it's still not work, I have to use chatGPT to help me check and fix because the codes are quite hard
+But after that, I read through the codes many times and tried to understand it clearly.*/
 
 /* From this part, I also learned that audio.volume only accepts values between 0 and 1, so audio.volume = volumeSlider.value / 100; is used to convert the slider value into the correct range.
 
@@ -125,8 +127,7 @@ function toggleRainy() {
   }
 }
 rainyVolume.addEventListener("input", () => {
-  rainyAudio.volume =
-    rainyVolume.value / 100;
+  rainyAudio.volume = rainyVolume.value / 100;
 })
 
 
@@ -145,8 +146,7 @@ function toggleThunderstorm() {
   }
 }
 thunderstormVolume.addEventListener("input", () => {
-  thunderstormAudio.volume =
-    thunderstormVolume.value / 100;
+  thunderstormAudio.volume = thunderstormVolume.value / 100;
 })
 
 //oceanwavesound
@@ -164,8 +164,7 @@ function toggleOcean() {
   }
 }
 oceanVolume.addEventListener("input", () => {
-  oceanAudio.volume =
-    oceanVolume.value / 100;
+  oceanAudio.volume = oceanVolume.value / 100;
 })
 
 //forestsound
@@ -183,8 +182,7 @@ function toggleForest() {
   }
 }
 forestVolume.addEventListener("input", () => {
-  forestAudio.volume =
-    forestVolume.value / 100;
+  forestAudio.volume = forestVolume.value / 100;
 })
 
 //leafsound
@@ -202,8 +200,7 @@ function toggleLeaf() {
   }
 }
 leafVolume.addEventListener("input", () => {
-  leafAudio.volume =
-    leafVolume.value / 100;
+  leafAudio.volume = leafVolume.value / 100;
 })
 
 //firesound
@@ -221,8 +218,7 @@ function toggleFire() {
   }
 }
 fireVolume.addEventListener("input", () => {
-  fireAudio.volume =
-    fireVolume.value / 100;
+  fireAudio.volume = fireVolume.value / 100;
 })
 
 //pianosound
@@ -240,8 +236,7 @@ function togglePiano() {
   }
 }
 pianoVolume.addEventListener("input", () => {
-  pianoAudio.volume =
-    pianoVolume.value / 100;
+  pianoAudio.volume = pianoVolume.value / 100;
 })
 
 //nightsound
@@ -259,8 +254,7 @@ function toggleNight() {
   }
 }
 nightVolume.addEventListener("input", () => {
-  nightAudio.volume =
-    nightVolume.value / 100;
+  nightAudio.volume = nightVolume.value / 100;
 })
 
 /* This section was more difficult for me compared to the previous audio functions because it involved dragging interactions and multiple event listeners working together. 
