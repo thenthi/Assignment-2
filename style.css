@@ -405,6 +405,7 @@ Since my background uses animated videos, users might have difficulty identifyin
 }
 
 .media-player {
+  position: relative;
   width: 100%;
   display: grid;
   gap: 18px;
